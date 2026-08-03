@@ -1,0 +1,106 @@
+import type { Mailbox, MessageDetail } from "@/lib/mail-types";
+
+export const demoMailboxes: Mailbox[] = [
+  {
+    address: "agent@example.com",
+    type: "agent",
+    status: "active",
+    messageCount: 0,
+  },
+  {
+    address: "ops@example.com",
+    type: "address",
+    status: "active",
+    messageCount: 0,
+  },
+];
+
+export const demoMessages: MessageDetail[] = [
+  {
+    messageId: "demo-welcome",
+    mailboxAddress: "agent@example.com",
+    from: "Founder <founder@example.net>",
+    to: "agent@example.com",
+    subject: "Welcome to Relaybox demo mode",
+    date: "2026-03-10T13:00:00.000Z",
+    size: 1824,
+    replyTo: "Founder <founder@example.net>",
+    bodyPreview:
+      "This demo inbox is here so the project is runnable without AWS. Before publishing publicly, replace the demo content with fixtures that show your intended workflows.",
+    attachmentCount: 0,
+    readAt: null,
+    unread: false,
+    starred: false,
+    archived: false,
+    text: [
+      "This demo inbox is here so the project is runnable without AWS.",
+      "",
+      "Before publishing publicly, replace the demo content with fixtures that show your intended workflows.",
+    ].join("\n"),
+    html: null,
+    headers: {
+      replyTo: "Founder <founder@example.net>",
+      messageId: "<demo-welcome@example.net>",
+    },
+    attachments: [],
+    ses: null,
+  },
+  {
+    messageId: "demo-roadmap",
+    mailboxAddress: "agent@example.com",
+    from: "Product <product@example.net>",
+    to: "agent@example.com",
+    subject: "Roadmap review",
+    date: "2026-03-09T18:30:00.000Z",
+    size: 1520,
+    replyTo: null,
+    bodyPreview:
+      "Suggested public alpha scope: - single-tenant auth - inboxes and message views - compose and reply - provider seams",
+    attachmentCount: 0,
+    readAt: null,
+    unread: false,
+    starred: false,
+    archived: false,
+    text: [
+      "Suggested public alpha scope:",
+      "- single-tenant auth",
+      "- inboxes and message views",
+      "- compose and reply",
+      "- provider seams",
+    ].join("\n"),
+    html: null,
+    headers: {
+      replyTo: null,
+      messageId: "<demo-roadmap@example.net>",
+    },
+    attachments: [],
+    ses: null,
+  },
+  {
+    messageId: "demo-ops-alert",
+    mailboxAddress: "ops@example.com",
+    from: "Status Bot <status@example.net>",
+    to: "ops@example.com",
+    subject: "Inbound index healthy",
+    date: "2026-03-08T08:15:00.000Z",
+    size: 1210,
+    replyTo: null,
+    bodyPreview: "Demo mode is using fixture-backed indexed reads.",
+    attachmentCount: 0,
+    readAt: null,
+    unread: false,
+    starred: false,
+    archived: false,
+    text: "Demo mode is using fixture-backed indexed reads.",
+    html: null,
+    headers: {
+      replyTo: null,
+      messageId: "<demo-ops@example.net>",
+    },
+    attachments: [],
+    ses: {
+      spamVerdict: { status: "PASS" },
+      virusVerdict: { status: "PASS" },
+    },
+  },
+];

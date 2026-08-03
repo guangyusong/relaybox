@@ -1,0 +1,67 @@
+{
+  "name": "relaybox",
+  "description": "Open inbox workspace for AI agents.",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guangyusong/relaybox.git"
+  },
+  "homepage": "https://github.com/guangyusong/relaybox#readme",
+  "bugs": {
+    "url": "https://github.com/guangyusong/relaybox/issues"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/sync-standalone-static.mjs",
+    "start": "node .next/standalone/server.js",
+    "lint": "eslint",
+    "test": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "check": "npm run lint && npm test && npm run build",
+    "check:release": "npm run check && npm run test:e2e",
+    "aws:backfill": "node scripts/backfill-aws-raw-mail.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1101.0",
+    "@aws-sdk/client-s3": "^3.1101.0",
+    "@aws-sdk/client-ses": "^3.1101.0",
+    "@aws-sdk/lib-dynamodb": "^3.1101.0",
+    "mailparser": "^3.9.14",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mailparser": "^3.4.6",
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.12",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "flatted": "3.4.4",
+    "postcss": "8.5.25",
+    "sharp": "0.35.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "email",
+    "agents",
+    "inbox",
+    "nextjs",
+    "oss"
+  ]
+}

@@ -1,0 +1,21 @@
+name: relaybox
+
+services:
+  relaybox:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_APP_NAME: Relaybox
+      MAIL_PROVIDER: demo
+      APP_ADMIN_PASSWORD: ${APP_ADMIN_PASSWORD:?Set APP_ADMIN_PASSWORD in .env}
+      APP_SESSION_SECRET: ${APP_SESSION_SECRET:?Set APP_SESSION_SECRET in .env}
+      APP_SESSION_COOKIE_SECURE: "0"
+      APP_SESSION_COOKIE_NAME: relaybox_session
+      APP_SESSION_MAX_AGE_SECONDS: 604800
+      APP_DATA_DIR: .data
+    volumes:
+      - relaybox_data:/app/.data
+
+volumes:
+  relaybox_data:
