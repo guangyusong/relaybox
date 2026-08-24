@@ -25,7 +25,7 @@
     "aws:backfill": "node scripts/backfill-aws-raw-mail.mjs"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.1101.0",
+    "@aws-sdk/client-dynamodb": "^3.1115.0",
     "@aws-sdk/client-s3": "^3.1101.0",
     "@aws-sdk/client-ses": "^3.1101.0",
     "@aws-sdk/lib-dynamodb": "^3.1101.0",
